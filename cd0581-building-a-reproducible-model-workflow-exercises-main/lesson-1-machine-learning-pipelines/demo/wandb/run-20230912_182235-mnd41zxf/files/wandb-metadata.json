@@ -1,0 +1,44 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.17",
+    "heartbeatAt": "2023-09-12T17:22:37.934799",
+    "startedAt": "2023-09-12T17:22:35.594040",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "git@github.com:nmasamba/reproducible_ml_udacity.git",
+        "commit": "0933d68067eb0329a092bdab8d7de1f05b14402a"
+    },
+    "email": "slimm4rl@yahoo.com",
+    "root": "/Users/nyashamasamba/Projects/ml_pipelines_udacity",
+    "host": "Nyashas-iMac.local",
+    "username": "nyashamasamba",
+    "executable": "/Users/nyashamasamba/anaconda3/envs/udacity_mlops/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 3200,
+        "min": 3200,
+        "max": 3200
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3200,
+            "min": 3200,
+            "max": 3200
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 717.7603149414062,
+            "used": 442.7496910095215
+        }
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
