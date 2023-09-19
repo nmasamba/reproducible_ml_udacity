@@ -14,6 +14,7 @@ def go(args):
     logger.info("Creating run exercise_1")
 
     # Create a W&B run in the project ``exercise_1``. Set the option ``job_type="upload_file"``:
+    run = wandb.init(project='exercise_1', job_type='upload_file')
 
     # YOUR CODE HERE
 
