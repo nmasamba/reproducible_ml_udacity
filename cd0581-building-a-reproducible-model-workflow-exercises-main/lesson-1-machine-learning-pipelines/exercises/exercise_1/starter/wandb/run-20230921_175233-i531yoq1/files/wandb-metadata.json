@@ -1,0 +1,54 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.17",
+    "heartbeatAt": "2023-09-21T16:52:33.789534",
+    "startedAt": "2023-09-21T16:52:33.050561",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--input_file",
+        "zen.txt",
+        "--artifact_name",
+        "zen_of_python",
+        "--artifact_type",
+        "text_file",
+        "--artifact_description",
+        "When writing good Python code is easy"
+    ],
+    "state": "running",
+    "program": "upload_artifact.py",
+    "codePathLocal": "upload_artifact.py",
+    "codePath": "cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-1-machine-learning-pipelines/exercises/exercise_1/starter/upload_artifact.py",
+    "git": {
+        "remote": "git@github.com:nmasamba/reproducible_ml_udacity.git",
+        "commit": "3454585737d1f3a8b7804993d28cd1753a68eddd"
+    },
+    "email": "slimm4rl@yahoo.com",
+    "root": "/Users/nyashamasamba/Projects/ml_pipelines_udacity",
+    "host": "Nyashas-iMac.local",
+    "username": "nyashamasamba",
+    "executable": "/Users/nyashamasamba/anaconda3/envs/udacity_mlops/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 3200,
+        "min": 3200,
+        "max": 3200
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3200,
+            "min": 3200,
+            "max": 3200
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 717.7603149414062,
+            "used": 442.07565689086914
+        }
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
