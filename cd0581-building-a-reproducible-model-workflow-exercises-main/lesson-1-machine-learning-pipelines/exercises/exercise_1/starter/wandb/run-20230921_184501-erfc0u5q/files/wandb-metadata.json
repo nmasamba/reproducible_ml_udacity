@@ -1,0 +1,48 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.17",
+    "heartbeatAt": "2023-09-21T17:45:02.297376",
+    "startedAt": "2023-09-21T17:45:01.425107",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--artifact_name",
+        "nmasamba/exercise_1/zen_of_python:v1"
+    ],
+    "state": "running",
+    "program": "use_artifact.py",
+    "codePathLocal": "use_artifact.py",
+    "codePath": "cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-1-machine-learning-pipelines/exercises/exercise_1/starter/use_artifact.py",
+    "git": {
+        "remote": "git@github.com:nmasamba/reproducible_ml_udacity.git",
+        "commit": "0f55220538ff480eaa1bb1d7bf3f3dc87cb0ed24"
+    },
+    "email": "slimm4rl@yahoo.com",
+    "root": "/Users/nyashamasamba/Projects/ml_pipelines_udacity",
+    "host": "Nyashas-iMac.local",
+    "username": "nyashamasamba",
+    "executable": "/Users/nyashamasamba/anaconda3/envs/udacity_mlops/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 3200,
+        "min": 3200,
+        "max": 3200
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3200,
+            "min": 3200,
+            "max": 3200
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 717.7603149414062,
+            "used": 442.1293754577637
+        }
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
