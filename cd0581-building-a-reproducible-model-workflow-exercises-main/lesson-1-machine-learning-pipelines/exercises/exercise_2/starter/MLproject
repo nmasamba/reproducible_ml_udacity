@@ -13,6 +13,7 @@ entry_points:
             artifact_type:
                 description: Type of output artifact
                 type: str
+                default: raw data
             artifact_description:
                 description: Description of the output artifact
                 type: str
