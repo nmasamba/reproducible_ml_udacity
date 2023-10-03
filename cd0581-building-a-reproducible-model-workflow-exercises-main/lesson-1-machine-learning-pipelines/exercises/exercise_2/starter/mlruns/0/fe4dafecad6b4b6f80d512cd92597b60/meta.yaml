@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nyashamasamba/Projects/ml_pipelines_udacity/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-1-machine-learning-pipelines/exercises/exercise_2/starter/mlruns/0/fe4dafecad6b4b6f80d512cd92597b60/artifacts
+end_time: 1695918810638
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fe4dafecad6b4b6f80d512cd92597b60
+run_name: handsome-loon-925
+run_uuid: fe4dafecad6b4b6f80d512cd92597b60
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1695918757597
+status: 4
+tags: []
+user_id: nyashamasamba
