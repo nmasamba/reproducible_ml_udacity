@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nyashamasamba/Projects/ml_pipelines_udacity/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_5/starter/mlruns/0/00e40373ec6d4b42b07fa74d06fb5b17/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 00e40373ec6d4b42b07fa74d06fb5b17
+run_name: delicate-colt-209
+run_uuid: 00e40373ec6d4b42b07fa74d06fb5b17
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698647286107
+status: 1
+tags: []
+user_id: nyashamasamba

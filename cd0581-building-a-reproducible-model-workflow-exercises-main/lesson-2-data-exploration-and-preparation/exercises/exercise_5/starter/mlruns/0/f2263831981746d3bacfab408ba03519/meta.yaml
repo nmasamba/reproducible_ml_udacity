@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nyashamasamba/Projects/ml_pipelines_udacity/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_5/starter/mlruns/0/f2263831981746d3bacfab408ba03519/artifacts
+end_time: 1698294300703
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f2263831981746d3bacfab408ba03519
+run_name: valuable-toad-56
+run_uuid: f2263831981746d3bacfab408ba03519
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698294104157
+status: 4
+tags: []
+user_id: nyashamasamba
