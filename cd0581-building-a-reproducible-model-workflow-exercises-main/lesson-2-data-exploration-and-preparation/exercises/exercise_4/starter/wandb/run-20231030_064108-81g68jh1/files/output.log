@@ -1,0 +1,8 @@
+
+./artifacts/genres_mod.parquet:latest/genres_mod.parquet
+/Users/nyashamasamba/anaconda3/envs/udacity_mlops/lib/python3.8/site-packages/ydata_profiling/model/typeset_relations.py:117: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  return pd.to_datetime(series)
+/Users/nyashamasamba/anaconda3/envs/udacity_mlops/lib/python3.8/site-packages/ydata_profiling/model/typeset_relations.py:117: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  return pd.to_datetime(series)
+/Users/nyashamasamba/anaconda3/envs/udacity_mlops/lib/python3.8/site-packages/ydata_profiling/model/typeset_relations.py:117: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  return pd.to_datetime(series)

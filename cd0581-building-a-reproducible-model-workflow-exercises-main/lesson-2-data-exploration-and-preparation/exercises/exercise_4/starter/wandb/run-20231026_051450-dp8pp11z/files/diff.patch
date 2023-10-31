@@ -1,0 +1,79 @@
+diff --git a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb
+index 117cb01..ad35b81 100644
+--- a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb
++++ b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb
+@@ -152704,7 +152704,7 @@
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+-   "version": "3.8.8"
++   "version": "3.6.8"
+   },
+   "widgets": {
+    "application/vnd.jupyter.widget-state+json": {
+diff --git a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml
+index 134c938..f216511 100644
+--- a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml
++++ b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml
+@@ -9,6 +9,5 @@ dependencies:
+   - pip=20.3.3
+   - pandas-profiling=2.11.0
+   - pyarrow=2.0
+-  - ipykernel
+   - pip:
+       - wandb==0.10.21
+\ No newline at end of file
+diff --git a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_5/starter/run.py b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_5/starter/run.py
+index f425bf6..f017c94 100644
+--- a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_5/starter/run.py
++++ b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_5/starter/run.py
+@@ -1,6 +1,8 @@
+ #!/usr/bin/env python
+ import argparse
+ import logging
++import os
++
+ import pandas as pd
+ import wandb
+ 
+@@ -13,8 +15,38 @@ def go(args):
+ 
+     run = wandb.init(project="exercise_5", job_type="process_data")
+ 
+-    ## YOUR CODE HERE
+-    pass
++    logger.info("Downloading artifact")
++    artifact = run.use_artifact(args.input_artifact)
++    local_path = artifact.file()
++
++    df = pd.read_parquet(local_path)
++
++    # Drop the duplicates
++    logger.info("Dropping duplicates")
++    df = df.drop_duplicates().reset_index(drop=True)
++
++    logger.info("Fixing missing values")
++    # These are missing values that are due to an old version of the data. On new data,
++    # because of a change in the web form used to register new songs, the title and the
++    # song name are already empty strings
++    df['title'].fillna(value='', inplace=True)
++    df['song_name'].fillna(value='', inplace=True)
++    df['text_feature'] = df['title'] + ' ' + df['song_name']
++
++    filename = "processed_data.csv"
++    df.to_csv(filename)
++
++    artifact = wandb.Artifact(
++        name=args.artifact_name,
++        type=args.artifact_type,
++        description=args.artifact_description,
++    )
++    artifact.add_file(filename)
++
++    logger.info("Logging artifact")
++    run.log_artifact(artifact)
++
++    os.remove(filename)
+ 
+ 
+ if __name__ == "__main__":

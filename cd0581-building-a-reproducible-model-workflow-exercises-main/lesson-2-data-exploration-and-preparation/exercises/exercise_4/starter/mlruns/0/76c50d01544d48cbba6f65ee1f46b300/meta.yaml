@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nyashamasamba/Projects/ml_pipelines_udacity/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/mlruns/0/76c50d01544d48cbba6f65ee1f46b300/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 76c50d01544d48cbba6f65ee1f46b300
+run_name: caring-robin-216
+run_uuid: 76c50d01544d48cbba6f65ee1f46b300
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698291957514
+status: 1
+tags: []
+user_id: nyashamasamba

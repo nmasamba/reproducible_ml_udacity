@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/nyashamasamba/Projects/ml_pipelines_udacity/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/mlruns/0/ff2dbafd62654f33b74d4f63615fa1ee/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ff2dbafd62654f33b74d4f63615fa1ee
+run_name: spiffy-mule-953
+run_uuid: ff2dbafd62654f33b74d4f63615fa1ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1697043366810
+status: 1
+tags: []
+user_id: nyashamasamba

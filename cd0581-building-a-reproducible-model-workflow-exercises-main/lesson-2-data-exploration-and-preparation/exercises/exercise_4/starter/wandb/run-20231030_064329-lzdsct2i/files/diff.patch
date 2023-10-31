@@ -1,0 +1,541 @@
+diff --git a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb
+index 117cb01..ad35b81 100644
+--- a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb
++++ b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/solution/EDA.ipynb
+@@ -152704,7 +152704,7 @@
+    "name": "python",
+    "nbconvert_exporter": "python",
+    "pygments_lexer": "ipython3",
+-   "version": "3.8.8"
++   "version": "3.6.8"
+   },
+   "widgets": {
+    "application/vnd.jupyter.widget-state+json": {
+diff --git a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/EDA.ipynb b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/EDA.ipynb
+index 2cf3aec..acc5b95 100644
+--- a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/EDA.ipynb
++++ b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/EDA.ipynb
+@@ -2,67 +2,9 @@
+  "cells": [
+   {
+    "cell_type": "code",
+-   "execution_count": 2,
++   "execution_count": 9,
+    "metadata": {},
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Collecting package metadata (repodata.json): done\n",
+-      "Solving environment: done\n",
+-      "\n",
+-      "\n",
+-      "==> WARNING: A newer version of conda exists. <==\n",
+-      "  current version: 4.10.3\n",
+-      "  latest version: 23.9.0\n",
+-      "\n",
+-      "Please update conda by running\n",
+-      "\n",
+-      "    $ conda update -n base -c defaults conda\n",
+-      "\n",
+-      "\n",
+-      "\n",
+-      "## Package Plan ##\n",
+-      "\n",
+-      "  environment location: /Users/nyashamasamba/anaconda3/envs/mlflow-51a201f2a8eac0601d78afdf58767b0a4aa0f41a\n",
+-      "\n",
+-      "  added / updated specs:\n",
+-      "    - pandas-profiling\n",
+-      "\n",
+-      "\n",
+-      "The following packages will be downloaded:\n",
+-      "\n",
+-      "    package                    |            build\n",
+-      "    ---------------------------|-----------------\n",
+-      "    pandas-profiling-2.12.0    |     pyhd8ed1ab_0         157 KB  conda-forge\n",
+-      "    ------------------------------------------------------------\n",
+-      "                                           Total:         157 KB\n",
+-      "\n",
+-      "The following packages will be UPDATED:\n",
+-      "\n",
+-      "  pandas-profiling                      2.11.0-pyhd8ed1ab_0 --> 2.12.0-pyhd8ed1ab_0\n",
+-      "\n",
+-      "\n",
+-      "Proceed ([y]/n)? ^C\n",
+-      "\n",
+-      "CondaSystemExit: \n",
+-      "Operation aborted.  Exiting.\n",
+-      "\n"
+-     ]
+-    },
+-    {
+-     "ename": "ModuleNotFoundError",
+-     "evalue": "No module named 'pandas_profiling'",
+-     "output_type": "error",
+-     "traceback": [
+-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+-      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+-      "Cell \u001b[0;32mIn[2], line 8\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mpandas\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m \u001b[38;5;21;01mpd\u001b[39;00m\n\u001b[1;32m      7\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mnumpy\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m \u001b[38;5;21;01mnp\u001b[39;00m\n\u001b[0;32m----> 8\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01mpandas_profiling\u001b[39;00m \u001b[38;5;28;01mimport\u001b[39;00m ProfileReport\n",
+-      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'pandas_profiling'"
+-     ]
+-    }
+-   ],
++   "outputs": [],
+    "source": [
+     "\n",
+     "import wandb\n",
+@@ -77,7 +19,32 @@
+    "cell_type": "code",
+    "execution_count": null,
+    "metadata": {},
+-   "outputs": [],
++   "outputs": [
++    {
++     "data": {
++      "text/html": [
++       "Finishing last run (ID:81g68jh1) before initializing another..."
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "Waiting for W&B process to finish... <strong style=\"color:green\">(success).</strong>"
++      ],
++      "text/plain": [
++       "<IPython.core.display.HTML object>"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    }
++   ],
+    "source": [
+     "\n",
+     "run = wandb.init(\n",
+@@ -88,9 +55,17 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 6,
+    "metadata": {},
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "./artifacts/genres_mod.parquet:latest/genres_mod.parquet\n"
++     ]
++    }
++   ],
+    "source": [
+     "artifact = run.use_artifact(\"exercise_4/genres_mod.parquet:latest\")\n",
+     "\n",
+@@ -100,7 +75,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 7,
+    "metadata": {},
+    "outputs": [],
+    "source": [
+@@ -109,9 +84,376 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 8,
+    "metadata": {},
+-   "outputs": [],
++   "outputs": [
++    {
++     "data": {
++      "application/vnd.jupyter.widget-view+json": {
++       "model_id": "29b4df99bc67417787d3b48552d5b17a",
++       "version_major": 2,
++       "version_minor": 0
++      },
++      "text/plain": [
++       "Summarize dataset:   0%|          | 0/5 [00:00<?, ?it/s]"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "name": "stderr",
++     "output_type": "stream",
++     "text": [
++      "/Users/nyashamasamba/anaconda3/envs/udacity_mlops/lib/python3.8/site-packages/ydata_profiling/model/typeset_relations.py:117: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.\n",
++      "  return pd.to_datetime(series)\n",
++      "/Users/nyashamasamba/anaconda3/envs/udacity_mlops/lib/python3.8/site-packages/ydata_profiling/model/typeset_relations.py:117: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.\n",
++      "  return pd.to_datetime(series)\n",
++      "/Users/nyashamasamba/anaconda3/envs/udacity_mlops/lib/python3.8/site-packages/ydata_profiling/model/typeset_relations.py:117: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.\n",
++      "  return pd.to_datetime(series)\n"
++     ]
++    },
++    {
++     "data": {
++      "application/vnd.jupyter.widget-view+json": {
++       "model_id": "56409aaa435b4c68a1b3e27cfab3609e",
++       "version_major": 2,
++       "version_minor": 0
++      },
++      "text/plain": [
++       "Generate report structure:   0%|          | 0/1 [00:00<?, ?it/s]"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "application/vnd.jupyter.widget-view+json": {
++       "model_id": "941b813fc2574f2a96e71857ce59efdc",
++       "version_major": 2,
++       "version_minor": 0
++      },
++      "text/plain": [
++       "Render widgets:   0%|          | 0/1 [00:00<?, ?it/s]"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "text/html": [
++       "<div>\n",
++       "<style scoped>\n",
++       "    .dataframe tbody tr th:only-of-type {\n",
++       "        vertical-align: middle;\n",
++       "    }\n",
++       "\n",
++       "    .dataframe tbody tr th {\n",
++       "        vertical-align: top;\n",
++       "    }\n",
++       "\n",
++       "    .dataframe thead th {\n",
++       "        text-align: right;\n",
++       "    }\n",
++       "</style>\n",
++       "<table border=\"1\" class=\"dataframe\">\n",
++       "  <thead>\n",
++       "    <tr style=\"text-align: right;\">\n",
++       "      <th></th>\n",
++       "      <th>danceability</th>\n",
++       "      <th>energy</th>\n",
++       "      <th>key</th>\n",
++       "      <th>loudness</th>\n",
++       "      <th>mode</th>\n",
++       "      <th>speechiness</th>\n",
++       "      <th>acousticness</th>\n",
++       "      <th>instrumentalness</th>\n",
++       "      <th>liveness</th>\n",
++       "      <th>valence</th>\n",
++       "      <th>tempo</th>\n",
++       "      <th>type</th>\n",
++       "      <th>duration_ms</th>\n",
++       "      <th>time_signature</th>\n",
++       "      <th>genre</th>\n",
++       "      <th>song_name</th>\n",
++       "      <th>title</th>\n",
++       "    </tr>\n",
++       "  </thead>\n",
++       "  <tbody>\n",
++       "    <tr>\n",
++       "      <th>42886</th>\n",
++       "      <td>0.875</td>\n",
++       "      <td>0.753</td>\n",
++       "      <td>8</td>\n",
++       "      <td>-6.899</td>\n",
++       "      <td>0</td>\n",
++       "      <td>0.0901</td>\n",
++       "      <td>0.040500</td>\n",
++       "      <td>0.000099</td>\n",
++       "      <td>0.1680</td>\n",
++       "      <td>0.7350</td>\n",
++       "      <td>112.002</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>210187</td>\n",
++       "      <td>4</td>\n",
++       "      <td>Trap Metal</td>\n",
++       "      <td>Smoke Break</td>\n",
++       "      <td>None</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42887</th>\n",
++       "      <td>0.589</td>\n",
++       "      <td>0.783</td>\n",
++       "      <td>6</td>\n",
++       "      <td>-11.170</td>\n",
++       "      <td>1</td>\n",
++       "      <td>0.0413</td>\n",
++       "      <td>0.000421</td>\n",
++       "      <td>0.916000</td>\n",
++       "      <td>0.0839</td>\n",
++       "      <td>0.0345</td>\n",
++       "      <td>123.995</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>410323</td>\n",
++       "      <td>4</td>\n",
++       "      <td>techno</td>\n",
++       "      <td>None</td>\n",
++       "      <td>Dark Techno Rave</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42888</th>\n",
++       "      <td>0.623</td>\n",
++       "      <td>0.845</td>\n",
++       "      <td>8</td>\n",
++       "      <td>-9.082</td>\n",
++       "      <td>1</td>\n",
++       "      <td>0.0508</td>\n",
++       "      <td>0.016000</td>\n",
++       "      <td>0.864000</td>\n",
++       "      <td>0.0862</td>\n",
++       "      <td>0.3690</td>\n",
++       "      <td>134.978</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>546707</td>\n",
++       "      <td>4</td>\n",
++       "      <td>trance</td>\n",
++       "      <td>None</td>\n",
++       "      <td>Top Trance Songs EVER</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42889</th>\n",
++       "      <td>0.674</td>\n",
++       "      <td>0.990</td>\n",
++       "      <td>5</td>\n",
++       "      <td>NaN</td>\n",
++       "      <td>1</td>\n",
++       "      <td>0.2840</td>\n",
++       "      <td>0.312000</td>\n",
++       "      <td>0.000016</td>\n",
++       "      <td>0.6270</td>\n",
++       "      <td>0.5090</td>\n",
++       "      <td>173.948</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>182069</td>\n",
++       "      <td>4</td>\n",
++       "      <td>dnb</td>\n",
++       "      <td>None</td>\n",
++       "      <td>UKF Drum &amp; Bass - All Uploads</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42890</th>\n",
++       "      <td>0.653</td>\n",
++       "      <td>0.944</td>\n",
++       "      <td>2</td>\n",
++       "      <td>NaN</td>\n",
++       "      <td>1</td>\n",
++       "      <td>0.0917</td>\n",
++       "      <td>0.001630</td>\n",
++       "      <td>0.473000</td>\n",
++       "      <td>0.3520</td>\n",
++       "      <td>0.0754</td>\n",
++       "      <td>139.970</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>221000</td>\n",
++       "      <td>4</td>\n",
++       "      <td>trance</td>\n",
++       "      <td>None</td>\n",
++       "      <td>TRANNCE 2020 Best Trance Music Official</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42891</th>\n",
++       "      <td>0.802</td>\n",
++       "      <td>0.630</td>\n",
++       "      <td>9</td>\n",
++       "      <td>-9.348</td>\n",
++       "      <td>0</td>\n",
++       "      <td>0.4320</td>\n",
++       "      <td>0.204000</td>\n",
++       "      <td>0.000002</td>\n",
++       "      <td>0.0649</td>\n",
++       "      <td>0.8770</td>\n",
++       "      <td>144.008</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>66743</td>\n",
++       "      <td>4</td>\n",
++       "      <td>Underground Rap</td>\n",
++       "      <td>Bang Bros!</td>\n",
++       "      <td>None</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42892</th>\n",
++       "      <td>0.565</td>\n",
++       "      <td>0.996</td>\n",
++       "      <td>11</td>\n",
++       "      <td>NaN</td>\n",
++       "      <td>0</td>\n",
++       "      <td>0.0682</td>\n",
++       "      <td>0.000050</td>\n",
++       "      <td>0.816000</td>\n",
++       "      <td>0.9220</td>\n",
++       "      <td>0.0658</td>\n",
++       "      <td>145.000</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>590875</td>\n",
++       "      <td>4</td>\n",
++       "      <td>psytrance</td>\n",
++       "      <td>None</td>\n",
++       "      <td>PSYTRANCE BANGERS best new 2020</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42893</th>\n",
++       "      <td>0.514</td>\n",
++       "      <td>0.955</td>\n",
++       "      <td>0</td>\n",
++       "      <td>-5.182</td>\n",
++       "      <td>0</td>\n",
++       "      <td>0.0402</td>\n",
++       "      <td>0.000053</td>\n",
++       "      <td>0.889000</td>\n",
++       "      <td>0.3380</td>\n",
++       "      <td>0.1100</td>\n",
++       "      <td>138.030</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>221007</td>\n",
++       "      <td>4</td>\n",
++       "      <td>trance</td>\n",
++       "      <td>None</td>\n",
++       "      <td>Top Trance Songs EVER</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42894</th>\n",
++       "      <td>0.749</td>\n",
++       "      <td>0.639</td>\n",
++       "      <td>1</td>\n",
++       "      <td>-9.841</td>\n",
++       "      <td>1</td>\n",
++       "      <td>0.1940</td>\n",
++       "      <td>0.080900</td>\n",
++       "      <td>0.609000</td>\n",
++       "      <td>0.3620</td>\n",
++       "      <td>0.6490</td>\n",
++       "      <td>153.003</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>215202</td>\n",
++       "      <td>4</td>\n",
++       "      <td>Underground Rap</td>\n",
++       "      <td>Southern Hostility</td>\n",
++       "      <td>None</td>\n",
++       "    </tr>\n",
++       "    <tr>\n",
++       "      <th>42895</th>\n",
++       "      <td>0.645</td>\n",
++       "      <td>0.980</td>\n",
++       "      <td>0</td>\n",
++       "      <td>-6.898</td>\n",
++       "      <td>1</td>\n",
++       "      <td>0.0445</td>\n",
++       "      <td>0.000029</td>\n",
++       "      <td>0.843000</td>\n",
++       "      <td>0.3180</td>\n",
++       "      <td>0.2600</td>\n",
++       "      <td>143.018</td>\n",
++       "      <td>audio_features</td>\n",
++       "      <td>443077</td>\n",
++       "      <td>4</td>\n",
++       "      <td>psytrance</td>\n",
++       "      <td>None</td>\n",
++       "      <td>Psytrance: From Full on to Forrest Trance</td>\n",
++       "    </tr>\n",
++       "  </tbody>\n",
++       "</table>\n",
++       "</div>"
++      ],
++      "text/plain": [
++       "       danceability  energy  key  loudness  mode  speechiness  acousticness  \\\n",
++       "42886         0.875   0.753    8    -6.899     0       0.0901      0.040500   \n",
++       "42887         0.589   0.783    6   -11.170     1       0.0413      0.000421   \n",
++       "42888         0.623   0.845    8    -9.082     1       0.0508      0.016000   \n",
++       "42889         0.674   0.990    5       NaN     1       0.2840      0.312000   \n",
++       "42890         0.653   0.944    2       NaN     1       0.0917      0.001630   \n",
++       "42891         0.802   0.630    9    -9.348     0       0.4320      0.204000   \n",
++       "42892         0.565   0.996   11       NaN     0       0.0682      0.000050   \n",
++       "42893         0.514   0.955    0    -5.182     0       0.0402      0.000053   \n",
++       "42894         0.749   0.639    1    -9.841     1       0.1940      0.080900   \n",
++       "42895         0.645   0.980    0    -6.898     1       0.0445      0.000029   \n",
++       "\n",
++       "       instrumentalness  liveness  valence    tempo            type  \\\n",
++       "42886          0.000099    0.1680   0.7350  112.002  audio_features   \n",
++       "42887          0.916000    0.0839   0.0345  123.995  audio_features   \n",
++       "42888          0.864000    0.0862   0.3690  134.978  audio_features   \n",
++       "42889          0.000016    0.6270   0.5090  173.948  audio_features   \n",
++       "42890          0.473000    0.3520   0.0754  139.970  audio_features   \n",
++       "42891          0.000002    0.0649   0.8770  144.008  audio_features   \n",
++       "42892          0.816000    0.9220   0.0658  145.000  audio_features   \n",
++       "42893          0.889000    0.3380   0.1100  138.030  audio_features   \n",
++       "42894          0.609000    0.3620   0.6490  153.003  audio_features   \n",
++       "42895          0.843000    0.3180   0.2600  143.018  audio_features   \n",
++       "\n",
++       "       duration_ms  time_signature            genre           song_name  \\\n",
++       "42886       210187               4       Trap Metal         Smoke Break   \n",
++       "42887       410323               4           techno                None   \n",
++       "42888       546707               4           trance                None   \n",
++       "42889       182069               4              dnb                None   \n",
++       "42890       221000               4           trance                None   \n",
++       "42891        66743               4  Underground Rap          Bang Bros!   \n",
++       "42892       590875               4        psytrance                None   \n",
++       "42893       221007               4           trance                None   \n",
++       "42894       215202               4  Underground Rap  Southern Hostility   \n",
++       "42895       443077               4        psytrance                None   \n",
++       "\n",
++       "                                           title  \n",
++       "42886                                       None  \n",
++       "42887                           Dark Techno Rave  \n",
++       "42888                      Top Trance Songs EVER  \n",
++       "42889              UKF Drum & Bass - All Uploads  \n",
++       "42890    TRANNCE 2020 Best Trance Music Official  \n",
++       "42891                                       None  \n",
++       "42892            PSYTRANCE BANGERS best new 2020  \n",
++       "42893                      Top Trance Songs EVER  \n",
++       "42894                                       None  \n",
++       "42895  Psytrance: From Full on to Forrest Trance  "
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    },
++    {
++     "data": {
++      "application/vnd.jupyter.widget-view+json": {
++       "model_id": "a81b6cd9225e4a3f8caadbe1ac08c5ab",
++       "version_major": 2,
++       "version_minor": 0
++      },
++      "text/plain": [
++       "VBox(children=(Tab(children=(Tab(children=(GridBox(children=(VBox(children=(GridspecLayout(children=(HTML(valu…"
++      ]
++     },
++     "metadata": {},
++     "output_type": "display_data"
++    }
++   ],
+    "source": [
+     "profile = ProfileReport(df, title=\"Pandas Profiling Report\", explorative=True)\n",
+     "profile.to_widgets()"
+diff --git a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml
+index 134c938..f216511 100644
+--- a/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml
++++ b/cd0581-building-a-reproducible-model-workflow-exercises-main/lesson-2-data-exploration-and-preparation/exercises/exercise_4/starter/conda.yml
+@@ -9,6 +9,5 @@ dependencies:
+   - pip=20.3.3
+   - pandas-profiling=2.11.0
+   - pyarrow=2.0
+-  - ipykernel
+   - pip:
+       - wandb==0.10.21
+\ No newline at end of file
